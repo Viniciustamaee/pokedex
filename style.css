@@ -34,11 +34,15 @@ body {
     color: gray;
 }
 
+#namePokemon {
+    text-transform: capitalize;
+}
+
 
 #imgPokemon {
     display: flex;
     justify-content: center;
-    height: 250px;
+    height: 200px;
 
 }
 
