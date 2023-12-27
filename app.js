@@ -1,8 +1,5 @@
 const shiny = document.querySelector('#shiny');
 const imgPokemon = document.querySelector('#imgPokemon');
-const HP = document.querySelector('#HP')
-const HPnumber = document.querySelector('#HPnumber')
-const Attack = document.querySelector('#Attack ')
 let countShiny = true;
 
 shiny.addEventListener('click', () => {
@@ -14,8 +11,6 @@ shiny.addEventListener('click', () => {
 
     countShiny = !countShiny;
 });
-
-HP.value = HPnumber.textContent
 
 
 

@@ -69,7 +69,48 @@ input[type="range"] {
 
 }
 
+#HP {
+    height: 10px;
+    width: 45%;
+    border-radius: 3px;
+    background-color: #2ecc71;
+}
 
+#Attack {
+    height: 10px;
+    width: 49%;
+    border-radius: 3px;
+    background-color: #e74c3c;
+}
+
+#Defense {
+    height: 10px;
+    width: 49%;
+    border-radius: 3px;
+    background-color: #3498db;
+}
+
+#Speed {
+    height: 10px;
+    width: 49%;
+    border-radius: 3px;
+    background-color: #f1c40f;
+}
+
+#life,
+#power,
+#defence,
+#movementSpeed {
+    margin-top: 10px;
+}
+
+.bar {
+    position: relative;
+    height: 10px;
+    width: 250px;
+    border-radius: 3px;
+    background-color: #ced4da;
+}
 
 
 
