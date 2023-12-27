@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #e9ecef;
+    width: 20%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+
+
+#nameAndId {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+#nameAndId span {
+    color: gray;
+}
+
+
+#imgPokemon {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+
+}
+
+#shinyButton {
+    display: flex;
+    justify-content: end;
+}
+
+header #shiny {
+    width: 70px;
+    height: 35px;
+}
+
+
+header #type {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+section {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+input[type="range"] {
+    width: 250px;
+
+}
+
+
+
+
+
+
+footer hr {
+    margin-bottom: 10px;
+}
+
+footer input {
+    margin-top: 10px;
+    width: 280px;
+    height: 50px;
+    font-size: 16px;
+}
+
+#PrevNext {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+#PrevNext button {
+    width: 70px;
+    height: 35px;
+    margin-bottom: 5px;
+}

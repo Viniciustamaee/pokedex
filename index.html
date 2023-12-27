@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="card">
+        <header>
+            <div id="nameAndId">
+                <label for="" id="IdPokemon"><span>1-</span></label>
+                <label for="" id="namePokemon">Bulbasaur</label>
+            </div>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/1.png"
+                alt="" id="imgPokemon">
+            <div id="shinyButton">
+                <button id="shiny" onclick>Shiny</button>
+            </div>
+            <div id="type">
+                <label for="">Grass</label>
+                <label for="">Poison</label>
+            </div>
+            <hr>
+        </header>
+
+        <section>
+
+            <div id="life">
+                <h3>HP</h3>
+                <input type="range" name="" id="HP" min="0" max="100">
+                <label for="" id="HPnumber">45</label>
+            </div>
+
+            <div id="power">
+                <h3>Attack</h3>
+                <input type="range" name="" id="Attack">
+                <label for="" id="AttackNumber">49</label>
+            </div>
+
+            <div id="defence">
+                <h3>Defense</h3>
+                <input type="range" name="" id="Defense">
+                <label for="" id="DefenseNumber">49</label>
+            </div>
+
+            <div id="movementSpeed">
+                <h3>Speed</h3>
+                <input type="range" name="" id="Speed">
+                <label for="" id="SpeedNumber">45</label>
+            </div>
+        </section>
+
+        <footer>
+            <hr>
+
+            <input type="text" id="selectPokemon" placeholder="Write name of Pokemon or put the ID">
+
+            <div id="PrevNext">
+                <button>Prev</button>
+                <button>Next</button>
+            </div>
+        </footer>
+
+    </div>
+
+
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
