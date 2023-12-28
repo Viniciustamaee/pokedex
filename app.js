@@ -13,8 +13,44 @@ const HPnumber = document.querySelector('#HPnumber');
 const attackNumber = document.querySelector('#AttackNumber');
 const defenseNumber = document.querySelector('#DefenseNumber');
 const speedNumber = document.querySelector('#SpeedNumber');
+const barSpeed = document.querySelector('#Speed')
+const barAttack = document.querySelector('#Attack')
+const barDefense = document.querySelector('#Defense')
+const barHP = document.querySelector('#HP')
+
+
 let numberPokemon = 1;
 let countShiny = true;
+
+const typeColors = {
+    normal: '#A8A878',
+    fire: '#F08030',
+    water: '#6890F0',
+    electric: '#F8D030',
+    grass: '#78C850',
+    ice: '#98D8D8',
+    fighting: '#C03028',
+    poison: '#A040A0',
+    ground: '#E0C068',
+    flying: '#A890F0',
+    psychic: '#F85888',
+    bug: '#A8B820',
+    rock: '#B8A038',
+    ghost: '#705898',
+    dark: '#705848',
+    steel: '#B8B8D0',
+    dragon: '#7038F8',
+    fairy: '#EE99AC',
+    none: '#e9ecef'
+};
+
+
+
+
+
+
+
+
 
 
 const searchPokemon = async (pokemon) => {
@@ -24,38 +60,57 @@ const searchPokemon = async (pokemon) => {
 };
 
 const infoPokmeon = async (pokemon) => {
+    const data = await searchPokemon(pokemon);
 
-    const data = await searchPokemon(pokemon)
-    namePokemon.innerHTML = data.name
-    IdPokemon.innerHTML = data.id
-    imgPokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default']
+    if (input.value > 459) {
+        alert('Digite um número menor que 459');
+        input.value = '';
+    } else {
+        try {
+            namePokemon.innerHTML = data.name;
+            IdPokemon.innerHTML = data.id;
+            imgPokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+            firstType.innerHTML = data.types[0].type.name;
 
-    try {
-        firstType.innerHTML = data.types['0'].type.name
-        secondType.innerHTML = data.types['1'].type.name
-        HPnumber.innerHTML = data.stats['0']['base_stat']
-        attackNumber.innerHTML = data.stats['1']['base_stat']
-        defenseNumber.innerHTML = data.stats['2']['base_stat']
-        speedNumber.innerHTML = data.stats['5']['base_stat']
+            if (data.types.length > 1) {
+                secondType.innerHTML = data.types[1].type.name;
+                secondType.style.display = '';
+            } else {
+                secondType.style.display = 'none';
+            }
 
+            HPnumber.innerHTML = data.stats[0].base_stat;
+            attackNumber.innerHTML = data.stats[1].base_stat;
+            defenseNumber.innerHTML = data.stats[2].base_stat;
+            speedNumber.innerHTML = data.stats[5].base_stat;
 
+            // Configuração das barras
+            barAttack.style.width = attackNumber.innerHTML + 'px';
+            barDefense.style.width = defenseNumber.innerHTML + 'px';
+            barHP.style.width = HPnumber.innerHTML + 'px';
+            barSpeed.style.width = speedNumber.innerHTML + 'px';
 
-    } catch {
-        firstType.innerHTML = data.types['0'].type.name
-        secondType.innerHTML = ''
-        HPnumber.innerHTML = data.stats['0']['base_stat']
-        attackNumber.innerHTML = data.stats['1']['base_stat']
-        defenseNumber.innerHTML = data.stats['2']['base_stat']
-        speedNumber.innerHTML = data.stats['5']['base_stat']
-
-
-
+            // Exibindo cores dos tipos
+            for (let x in typeColors) {
+                if (x == firstType.innerHTML) {
+                    firstType.style.backgroundColor = typeColors[x];
+                }
+                if (x == secondType.innerHTML) {
+                    secondType.style.backgroundColor = typeColors[x];
+                }
+            }
+        } catch (error) {
+            console.error(error);
+        }
     }
+
+
+
+
 
 }
 
 const infoPokmeonShiny = async (pokemon) => {
-    data.types['0'].type.name
     const data = await searchPokemon(pokemon)
     namePokemon.innerHTML = data.name
     IdPokemon.innerHTML = data.id
@@ -76,7 +131,6 @@ shiny.addEventListener('click', () => {
         infoPokmeonShiny(input.value || numberPokemon)
     } else {
         infoPokmeon(input.value || numberPokemon)
-        input.value = ''
     }
     countShiny = !countShiny;
 });
@@ -97,6 +151,8 @@ next.addEventListener('click', () => {
     firstType.innerHTML = ''
 
 })
+
+
 
 
 infoPokmeon(numberPokemon)
