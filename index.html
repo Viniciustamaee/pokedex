@@ -15,16 +15,22 @@
 <body>
     <div id="card">
         <header>
+
             <div id="nameAndId">
-                <label for="" id="IdPokemon"><span>1</span></label>
-                <label for="" id="namePokemon">bulbasaur</label>
+                <div class="couple">
+                    <label for="" id="IdPokemon"><span>1</span></label>
+                    <label for="" id="namePokemon">bulbasaur</label>
+                </div>
+                <div id="shinyButton">
+                    <span id="shiny" onclick><img
+                            src="https://res.cloudinary.com/shiny24/image/upload/v1669396824/pokemon/shiny_symbol_pokemon_tdxjdc.png"
+                            alt=""></span>
+                </div>
             </div>
 
             <img src="" alt="" id="imgPokemon">
 
-            <div id="shinyButton">
-                <button id="shiny" onclick>Shiny</button>
-            </div>
+
             <div id="type">
                 <label for="" id="firstType">grass</label>
                 <label for="" id="secondType">poison</label>
@@ -77,8 +83,8 @@
             </form>
 
             <div id="PrevNext">
-                <button id="prev">Prev</button>
-                <button id='next'>Next</button>
+                <button id="prev">&laquo;</button>
+                <button id='next'>&raquo;</button>
             </div>
         </footer>
 

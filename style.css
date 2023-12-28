@@ -9,7 +9,9 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+
 }
+
 
 #card {
     display: flex;
@@ -30,35 +32,29 @@ body {
     margin-top: 20px;
 }
 
-#nameAndId span {
-    color: gray;
+#nameAndId {
+    display: flex;
+    justify-content: center;
 }
 
 #namePokemon {
     text-transform: capitalize;
 }
 
+#shinyButton img {
+    position: fixed;
+    left: 1095px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+}
 
 #imgPokemon {
     position: relative;
     left: 50px;
     height: 200px;
     width: 200px;
-
 }
-
-
-
-#shinyButton {
-    display: flex;
-    justify-content: end;
-}
-
-#shiny {
-    width: 70px;
-    height: 35px;
-}
-
 
 header #type {
     display: flex;
@@ -85,8 +81,6 @@ header #secondType {
     height: 30px;
     background-color: #A040A0;
 }
-
-
 
 #headerHr {
     margin-top: 20px;
@@ -146,9 +140,6 @@ input[type="range"] {
     border-radius: 3px;
     background-color: #ced4da;
 }
-
-
-
 
 footer hr {
     width: 300px;

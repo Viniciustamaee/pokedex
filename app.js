@@ -40,18 +40,8 @@ const typeColors = {
     dark: '#705848',
     steel: '#B8B8D0',
     dragon: '#7038F8',
-    fairy: '#EE99AC',
-    none: '#e9ecef'
+    fairy: '#EE99AC'
 };
-
-
-
-
-
-
-
-
-
 
 const searchPokemon = async (pokemon) => {
     const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
@@ -62,7 +52,7 @@ const searchPokemon = async (pokemon) => {
 const infoPokmeon = async (pokemon) => {
     const data = await searchPokemon(pokemon);
 
-    if (input.value > 459) {
+    if (input.value > 649) {
         alert('Digite um número menor que 459');
         input.value = '';
     } else {
@@ -84,13 +74,11 @@ const infoPokmeon = async (pokemon) => {
             defenseNumber.innerHTML = data.stats[2].base_stat;
             speedNumber.innerHTML = data.stats[5].base_stat;
 
-            // Configuração das barras
             barAttack.style.width = attackNumber.innerHTML + 'px';
             barDefense.style.width = defenseNumber.innerHTML + 'px';
             barHP.style.width = HPnumber.innerHTML + 'px';
             barSpeed.style.width = speedNumber.innerHTML + 'px';
 
-            // Exibindo cores dos tipos
             for (let x in typeColors) {
                 if (x == firstType.innerHTML) {
                     firstType.style.backgroundColor = typeColors[x];
@@ -103,11 +91,6 @@ const infoPokmeon = async (pokemon) => {
             console.error(error);
         }
     }
-
-
-
-
-
 }
 
 const infoPokmeonShiny = async (pokemon) => {
@@ -115,13 +98,13 @@ const infoPokmeonShiny = async (pokemon) => {
     namePokemon.innerHTML = data.name
     IdPokemon.innerHTML = data.id
     imgPokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_shiny']
-
 }
 
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     infoPokmeon(input.value.toLowerCase())
+    numberPokemon = parseInt(input.value, 10);
 })
 
 
@@ -138,6 +121,7 @@ shiny.addEventListener('click', () => {
 prev.addEventListener('click', () => {
     if (numberPokemon != 1) {
         numberPokemon -= 1
+        input.value = numberPokemon;
         infoPokmeon(numberPokemon)
         secondType.innerHTML = ''
         firstType.innerHTML = ''
@@ -145,15 +129,13 @@ prev.addEventListener('click', () => {
 })
 
 next.addEventListener('click', () => {
-    numberPokemon += 1
+    numberPokemon += 1;
+    input.value = numberPokemon;
     infoPokmeon(numberPokemon)
     secondType.innerHTML = ''
     firstType.innerHTML = ''
 
 })
-
-
-
 
 infoPokmeon(numberPokemon)
 
