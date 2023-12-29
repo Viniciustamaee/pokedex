@@ -17,6 +17,7 @@ const barSpeed = document.querySelector('#Speed')
 const barAttack = document.querySelector('#Attack')
 const barDefense = document.querySelector('#Defense')
 const barHP = document.querySelector('#HP')
+const shinyIcon = document.querySelector('#shiny')
 
 
 let numberPokemon = 1;
@@ -98,6 +99,7 @@ const infoPokmeonShiny = async (pokemon) => {
     namePokemon.innerHTML = data.name
     IdPokemon.innerHTML = data.id
     imgPokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_shiny']
+    
 }
 
 
@@ -112,8 +114,12 @@ form.addEventListener('submit', (event) => {
 shiny.addEventListener('click', () => {
     if (countShiny) {
         infoPokmeonShiny(input.value || numberPokemon)
+        shiny.style.backgroundColor = '#dee2e6';
+
     } else {
         infoPokmeon(input.value || numberPokemon)
+        shiny.style.backgroundColor = '#e9ecef';
+
     }
     countShiny = !countShiny;
 });
