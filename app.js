@@ -23,75 +23,96 @@ let numberPokemon = 1;
 let countShiny = true;
 
 const typeColors = {
-    normal: '#A8A878',
-    fire: '#F08030',
-    water: '#6890F0',
-    electric: '#F8D030',
-    grass: '#78C850',
     ice: '#98D8D8',
-    fighting: '#C03028',
+    bug: '#A8B820',
+    fire: '#F08030',
+    rock: '#B8A038',
+    dark: '#705848',
+    steel: '#B8B8D0',
+    water: '#6890F0',
+    ghost: '#705898',
+    fairy: '#EE99AC',
+    grass: '#78C850',
+    normal: '#A8A878',
     poison: '#A040A0',
     ground: '#E0C068',
     flying: '#A890F0',
-    psychic: '#F85888',
-    bug: '#A8B820',
-    rock: '#B8A038',
-    ghost: '#705898',
-    dark: '#705848',
-    steel: '#B8B8D0',
     dragon: '#7038F8',
-    fairy: '#EE99AC'
+    psychic: '#F85888',
+    fighting: '#C03028',
+    electric: '#F8D030'
 };
 
 const searchPokemon = async (pokemon) => {
     const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-    const data = await APIResponse.json();
-    return data;
+    if (APIResponse.status === 200) {
+        const data = await APIResponse.json();
+        return data;
+    }
 };
 
 const infoPokmeon = async (pokemon) => {
     const data = await searchPokemon(pokemon);
 
     if (input.value > 649) {
-        alert('Digite um número menor que 459');
+        alert('Digite um número menor que 649');
         input.value = '';
-    } else {
-        try {
-            namePokemon.innerHTML = data.name;
-            IdPokemon.innerHTML = data.id;
-            imgPokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
-            firstType.innerHTML = data.types[0].type.name;
+        return;
+    }
+    if (data) {
+        namePokemon.innerHTML = data.name;
+        IdPokemon.innerHTML = data.id;
+        shiny.style.display = '';
 
-            if (data.types.length > 1) {
-                secondType.innerHTML = data.types[1].type.name;
-                secondType.style.display = '';
-            } else {
-                secondType.style.display = 'none';
-            }
-
-            HPnumber.innerHTML = data.stats[0].base_stat;
-            attackNumber.innerHTML = data.stats[1].base_stat;
-            defenseNumber.innerHTML = data.stats[2].base_stat;
-            speedNumber.innerHTML = data.stats[5].base_stat;
-
-            barAttack.style.width = attackNumber.innerHTML + 'px';
-            barDefense.style.width = defenseNumber.innerHTML + 'px';
-            barHP.style.width = HPnumber.innerHTML + 'px';
-            barSpeed.style.width = speedNumber.innerHTML + 'px';
-
-            for (let x in typeColors) {
-                if (x == firstType.innerHTML) {
-                    firstType.style.backgroundColor = typeColors[x];
-                }
-                if (x == secondType.innerHTML) {
-                    secondType.style.backgroundColor = typeColors[x];
-                }
-            }
-        } catch (error) {
-            console.error(error);
+        imgPokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+        firstType.innerHTML = data.types[0].type.name;
+        if (data.types.length > 1) {
+            secondType.innerHTML = data.types[1].type.name;
+            secondType.style.display = '';
+        } else {
+            secondType.style.display = 'none';
         }
+        HPnumber.innerHTML = data.stats[0].base_stat;
+        attackNumber.innerHTML = data.stats[1].base_stat;
+        defenseNumber.innerHTML = data.stats[2].base_stat;
+        speedNumber.innerHTML = data.stats[5].base_stat;
+        input.value = data.id
+        numberPokemon = data.id
+        barAttack.style.width = attackNumber.innerHTML + 'px';
+        barDefense.style.width = defenseNumber.innerHTML + 'px';
+        barHP.style.width = HPnumber.innerHTML + 'px';
+        barSpeed.style.width = speedNumber.innerHTML + 'px';
+        for (let color in typeColors) {
+            if (color == firstType.innerHTML) {
+                firstType.style.backgroundColor = typeColors[color];
+            }
+            if (color == secondType.innerHTML) {
+                secondType.style.backgroundColor = typeColors[color];
+            }
+        }
+
+    } else {
+        namePokemon.innerHTML = 'Not Found'
+        IdPokemon.innerHTML = '';
+        imgPokemon.src = 'https://4.bp.blogspot.com/-iGaMK0eMGOI/UyNFq5nT5LI/AAAAAAAABKQ/w9xYCLHDgoM/s1600/12.png'
+        firstType.style.backgroundColor = '#e9ecef';
+        secondType.style.backgroundColor = '#e9ecef';
+        firstType.style.color = '#e9ecef';
+        secondType.style.color = '#e9ecef';
+        HPnumber.innerHTML = '0';
+        attackNumber.innerHTML = '0';
+        defenseNumber.innerHTML = '0';
+        speedNumber.innerHTML = '0';
+        barAttack.style.width = '0px';
+        barDefense.style.width = '0px';
+        barHP.style.width = '0px';
+        barSpeed.style.width = '0px';
+        shiny.style.display = 'none';
+
+
     }
 }
+
 
 const infoPokmeonShiny = async (pokemon) => {
     const data = await searchPokemon(pokemon)
@@ -131,7 +152,6 @@ prev.addEventListener('click', () => {
 
 next.addEventListener('click', () => {
     numberPokemon += 1;
-    input.value = numberPokemon;
     infoPokmeon(numberPokemon)
     secondType.innerHTML = ''
     firstType.innerHTML = ''

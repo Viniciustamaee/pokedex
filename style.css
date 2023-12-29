@@ -34,11 +34,11 @@ body {
     justify-content: center;
 }
 
-#couple{
+#couple {
     display: flex;
 }
 
-#couple h3{
+#couple h3 {
     margin-left: 10px;
 }
 
@@ -51,7 +51,7 @@ body {
     cursor: pointer;
 }
 
-#shiny{
+#shiny {
     position: relative;
     left: 50px;
     border-radius: 50px;
@@ -108,28 +108,24 @@ input[type="range"] {
 
 #HP {
     height: 10px;
-    width: 45%;
     border-radius: 3px;
     background-color: #2ecc71;
 }
 
 #Attack {
     height: 10px;
-    width: 49%;
     border-radius: 3px;
     background-color: #e74c3c;
 }
 
 #Defense {
     height: 10px;
-    width: 49%;
     border-radius: 3px;
     background-color: #3498db;
 }
 
 #Speed {
     height: 10px;
-    width: 49%;
     border-radius: 3px;
     background-color: #f1c40f;
 }
