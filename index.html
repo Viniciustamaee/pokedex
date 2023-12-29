@@ -13,81 +13,82 @@
 </head>
 
 <body>
-    <div id="card">
-        <header>
+    <div id="backCard">
+        <div id="card">
+            <header>
 
-            <div id="nameAndId">
-                <div id="couple">
-                    <h3 for="" id="IdPokemon"><span>1</span></h3>
-                    <h3 for="" id="namePokemon"> bulbasaur</h3>
+                <div id="nameAndId">
+                    <div id="couple">
+                        <h3 for="" id="IdPokemon"><span>1</span></h3>
+                        <h3 for="" id="namePokemon" style="width: 200px; word-wrap: break-word;"> bulbasaur</h3>
+                    </div>
+                    <div id="shinyButton">
+                        <span onclick><img
+                                src="https://res.cloudinary.com/shiny24/image/upload/v1669396824/pokemon/shiny_symbol_pokemon_tdxjdc.png"
+                                alt="" id="shiny"></span>
+                    </div>
                 </div>
-                <div id="shinyButton">
-                    <span onclick><img
-                            src="https://res.cloudinary.com/shiny24/image/upload/v1669396824/pokemon/shiny_symbol_pokemon_tdxjdc.png"
-                            alt="" id="shiny"></span>
+
+                <div id="sla">
+                    <img src="" alt="" id="imgPokemon">
                 </div>
-            </div>
 
-            <img src="" alt="" id="imgPokemon">
+                <div id="type">
+                    <p for="" id="firstType">grass</p>
+                    <p for="" id="secondType">poison</p>
+                </div>
 
+            </header>
 
-            <div id="type">
-                <p for="" id="firstType">grass</p>
-                <p for="" id="secondType">poison</p>
-            </div>
-            <div id="headerHr">
+            <section>
+
+                <div id="life">
+                    <h3>HP <span for="" id="HPnumber">45</span></h3>
+
+                    <div id="bar">
+                        <div id="HP"></div>
+                    </div>
+                </div>
+
+                <div id="power">
+                    <h3>Attack <span for="" id="AttackNumber">49</span></h3>
+
+                    <div id="bar">
+                        <div id="Attack"></div>
+                    </div>
+                </div>
+
+                <div id="defence">
+                    <h3>Defense <span for="" id="DefenseNumber">49</span></h3>
+
+                    <div id="bar">
+                        <div id="Defense"> </div>
+                    </div>
+                </div>
+
+                <div id="movementSpeed">
+                    <h3>Speed <span for="" id="SpeedNumber">45</span></h3>
+
+                    <div id="bar">
+                        <div id="Speed"></div>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
                 <hr>
-            </div>
-        </header>
+                <form>
+                    <input type="text" id="selectPokemon" placeholder="Write name of Pokemon or put the ID" required>
+                    <button>click</button>
+                </form>
 
-        <section>
-
-            <div id="life">
-                <h3>HP <span for="" id="HPnumber">45</span></h3>
-
-                <div id="bar">
-                    <div id="HP"></div>
+                <div id="PrevNext">
+                    <button id="prev">&laquo;</button>
+                    <button id='next'>&raquo;</button>
                 </div>
-            </div>
+            </footer>
 
-            <div id="power">
-                <h3>Attack <span for="" id="AttackNumber">49</span></h3>
-
-                <div id="bar">
-                    <div id="Attack"></div>
-                </div>
-            </div>
-
-            <div id="defence">
-                <h3>Defense <span for="" id="DefenseNumber">49</span></h3>
-
-                <div id="bar">
-                    <div id="Defense"> </div>
-                </div>
-            </div>
-
-            <div id="movementSpeed">
-                <h3>Speed <span for="" id="SpeedNumber">45</span></h3>
-
-                <div id="bar">
-                    <div id="Speed"></div>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <hr>
-            <form>
-                <input type="text" id="selectPokemon" placeholder="Write name of Pokemon or put the ID" required>
-                <button>click</button>
-            </form>
-
-            <div id="PrevNext">
-                <button id="prev">&laquo;</button>
-                <button id='next'>&raquo;</button>
-            </div>
-        </footer>
-
+        </div>
     </div>
 
     <script src="app.js"></script>

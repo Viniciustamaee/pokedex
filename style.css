@@ -20,13 +20,21 @@ body {
     background-color: #e9ecef;
     width: 400px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 10px solid #03071e;
+}
+
+#backCard {
+    background-color: #9d0208;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 #nameAndId {
     text-align: center;
     font-size: 30px;
     margin-top: 20px;
+    word-wrap: break-word;
+    height: 100px;
 }
 
 #nameAndId {
@@ -44,6 +52,7 @@ body {
 
 #namePokemon {
     text-transform: capitalize;
+
 }
 
 #shinyButton img {
@@ -53,16 +62,17 @@ body {
 
 #shiny {
     position: relative;
-    left: 50px;
+    left: 20px;
     border-radius: 50px;
 }
 
 #imgPokemon {
     position: relative;
-    left: 50px;
+    left: 20px;
     height: 200px;
     width: 200px;
 }
+
 
 header #type {
     display: flex;
