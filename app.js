@@ -19,7 +19,6 @@ const barDefense = document.querySelector('#Defense')
 const barHP = document.querySelector('#HP')
 const shinyIcon = document.querySelector('#shiny')
 
-
 let numberPokemon = 1;
 let countShiny = true;
 
@@ -102,14 +101,11 @@ const infoPokmeonShiny = async (pokemon) => {
     
 }
 
-
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     infoPokmeon(input.value.toLowerCase())
     numberPokemon = parseInt(input.value, 10);
 })
-
-
 
 shiny.addEventListener('click', () => {
     if (countShiny) {
@@ -144,6 +140,3 @@ next.addEventListener('click', () => {
 })
 
 infoPokmeon(numberPokemon)
-
-
-

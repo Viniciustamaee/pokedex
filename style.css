@@ -12,7 +12,6 @@ body {
 
 }
 
-
 #card {
     display: flex;
     justify-content: center;
@@ -23,8 +22,6 @@ body {
     border-radius: 10px;
     border: 2px solid black;
 }
-
-
 
 #nameAndId {
     text-align: center;
