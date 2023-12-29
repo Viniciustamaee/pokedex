@@ -37,6 +37,14 @@ body {
     justify-content: center;
 }
 
+#couple{
+    display: flex;
+}
+
+#couple h3{
+    margin-left: 10px;
+}
+
 #namePokemon {
     text-transform: capitalize;
 }
@@ -136,7 +144,7 @@ input[type="range"] {
     margin-top: 10px;
 }
 
-.bar {
+#bar {
     position: relative;
     height: 10px;
     width: 250px;
