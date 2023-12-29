@@ -98,7 +98,7 @@ const infoPokmeonShiny = async (pokemon) => {
     namePokemon.innerHTML = data.name
     IdPokemon.innerHTML = data.id
     imgPokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_shiny']
-    
+
 }
 
 form.addEventListener('submit', (event) => {
@@ -127,6 +127,8 @@ prev.addEventListener('click', () => {
         infoPokmeon(numberPokemon)
         secondType.innerHTML = ''
         firstType.innerHTML = ''
+        shiny.style.backgroundColor = '#e9ecef';
+
     }
 })
 
@@ -136,6 +138,8 @@ next.addEventListener('click', () => {
     infoPokmeon(numberPokemon)
     secondType.innerHTML = ''
     firstType.innerHTML = ''
+    shiny.style.backgroundColor = '#e9ecef';
+
 
 })
 
