@@ -111,11 +111,9 @@ shiny.addEventListener('click', () => {
     if (countShiny) {
         infoPokmeonShiny(input.value || numberPokemon)
         shiny.style.backgroundColor = '#dee2e6';
-
     } else {
         infoPokmeon(input.value || numberPokemon)
         shiny.style.backgroundColor = '#e9ecef';
-
     }
     countShiny = !countShiny;
 });
@@ -128,7 +126,6 @@ prev.addEventListener('click', () => {
         secondType.innerHTML = ''
         firstType.innerHTML = ''
         shiny.style.backgroundColor = '#e9ecef';
-
     }
 })
 
@@ -139,8 +136,6 @@ next.addEventListener('click', () => {
     secondType.innerHTML = ''
     firstType.innerHTML = ''
     shiny.style.backgroundColor = '#e9ecef';
-
-
 })
 
 infoPokmeon(numberPokemon)
