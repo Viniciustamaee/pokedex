@@ -9,7 +9,6 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    background: linear-gradient(to right, black, gray);
 
 }
 
@@ -30,20 +29,12 @@ body {
     border-radius: 30px;
 }
 
-
-
-
 #nameAndId {
     text-align: center;
     font-size: 30px;
     margin-top: 20px;
     word-wrap: break-word;
     height: 100px;
-}
-
-#nameAndId {
-    display: flex;
-    justify-content: center;
 }
 
 #couple {
@@ -56,23 +47,28 @@ body {
 
 #namePokemon {
     text-transform: capitalize;
+}
 
+#boxPokemon {
+    display: flex;
+    justify-content: center;
 }
 
 #shinyButton img {
+
     height: 50px;
     cursor: pointer;
+
 }
 
 #shiny {
     position: relative;
-    left: 20px;
+    left: 150px;
     border-radius: 50px;
+    margin-top: 10px;
 }
 
 #imgPokemon {
-    position: relative;
-    left: 40px;
     height: 200px;
     width: 200px;
 }
@@ -84,16 +80,7 @@ header #type {
     margin-top: 20px;
 }
 
-header #firstType {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    width: 100px;
-    height: 30px;
-    background-color: #78C850;
-}
-
+header #firstType,
 header #secondType {
     display: flex;
     justify-content: center;
@@ -101,6 +88,12 @@ header #secondType {
     border-radius: 20px;
     width: 100px;
     height: 30px;
+    color: black;
+    background-color: #78C850;
+}
+
+header #secondType {
+    margin-left: 10px;
     background-color: #A040A0;
 }
 
@@ -126,21 +119,19 @@ input[type="range"] {
     background-color: #2ecc71;
 }
 
-#Attack {
+#Attack,
+#Defense,
+#Speed {
     height: 10px;
     border-radius: 3px;
     background-color: #e74c3c;
 }
 
 #Defense {
-    height: 10px;
-    border-radius: 3px;
     background-color: #3498db;
 }
 
 #Speed {
-    height: 10px;
-    border-radius: 3px;
     background-color: #f1c40f;
 }
 
