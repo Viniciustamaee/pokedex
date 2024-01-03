@@ -19,6 +19,7 @@ const barDefense = document.querySelector('#defense')
 const barHP = document.querySelector('#HP')
 const shinyIcon = document.querySelector('#shiny')
 const body = document.querySelector('body')
+const pokebola = document.querySelector('#pokebola')
 
 let numberPokemon = 1;
 let countShiny = true;
@@ -92,7 +93,7 @@ const infoPokmeon = async (pokemon) => {
 
 
             } else if (secondType.innerText == "") {
-                console.log('AAAS')
+                body.style.background = 'none'
                 body.style.backgroundColor = firstType.style.backgroundColor
             } else if (secondType.innerText !== '') {
                 body.style.background = `linear-gradient(to right, ${firstType.style.backgroundColor}, ${secondType.style.backgroundColor})`
@@ -135,7 +136,15 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     infoPokmeon(input.value.toLowerCase())
     numberPokemon = parseInt(input.value, 10);
+    secondType.innerHTML = ''
+    firstType.innerHTML = ''
 })
+
+function clickPokebola() {
+    let wikiPokemon = `https://pokedex-br.fandom.com/pt-br/wiki/${namePokemon.textContent}`;
+    window.open(wikiPokemon, '_blank');
+}
+
 
 shiny.addEventListener('click', () => {
     if (countShiny) {
@@ -156,7 +165,6 @@ prev.addEventListener('click', () => {
         secondType.innerHTML = ''
         firstType.innerHTML = ''
         shiny.style.backgroundColor = '#e9ecef';
-        body.style.background = 'none'
     }
 })
 
@@ -167,8 +175,6 @@ next.addEventListener('click', () => {
         secondType.innerHTML = ''
         firstType.innerHTML = ''
         shiny.style.backgroundColor = '#e9ecef';
-        body.style.background = 'none'
-
     }
 })
 
