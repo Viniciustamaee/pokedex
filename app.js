@@ -21,8 +21,9 @@ const shinyIcon = document.querySelector('#shiny')
 const body = document.querySelector('body')
 const pokebola = document.querySelector('#pokebola')
 
-let numberPokemon = 1;
+let alert = document.createElement('h2');
 let countShiny = true;
+let numberPokemon = 1;
 
 const typeColors = {
     ice: '#98D8D8',
@@ -57,10 +58,13 @@ const infoPokmeon = async (pokemon) => {
     const data = await searchPokemon(pokemon);
 
     if (input.value > 649) {
-        alert('Digite um número menor que 649');
+        alert.innerText = 'The limit is 649';
+        alert.style.display = ''
+        input.parentNode.appendChild(alert)
         input.value = '';
         return;
     }
+
     if (data) {
         namePokemon.innerHTML = data.name;
         IdPokemon.innerHTML = data.id;
@@ -98,6 +102,11 @@ const infoPokmeon = async (pokemon) => {
             } else if (secondType.innerText !== '') {
                 body.style.background = `linear-gradient(to right, ${firstType.style.backgroundColor}, ${secondType.style.backgroundColor})`
             }
+
+        }
+        if (input.value < 649) {
+            prev.disabled = false
+            next.disabled = false
         }
 
 
@@ -138,10 +147,16 @@ form.addEventListener('submit', (event) => {
     numberPokemon = parseInt(input.value, 10);
     secondType.innerHTML = ''
     firstType.innerHTML = ''
+    alert.style.display = 'none';
+    if (input.value > 649) {
+        prev.disabled = true
+        next.disabled = true
+    }
+
 })
 
 function clickPokebola() {
-    let wikiPokemon = `https://pokedex-br.fandom.com/pt-br/wiki/${namePokemon.textContent}`;
+    let wikiPokemon = `https://www.pokemon.com/br/pokedex/${namePokemon.textContent}`;
     window.open(wikiPokemon, '_blank');
 }
 
@@ -165,6 +180,8 @@ prev.addEventListener('click', () => {
         secondType.innerHTML = ''
         firstType.innerHTML = ''
         shiny.style.backgroundColor = '#e9ecef';
+        alert.style.display = 'none';
+
     }
 })
 
@@ -175,6 +192,7 @@ next.addEventListener('click', () => {
         secondType.innerHTML = ''
         firstType.innerHTML = ''
         shiny.style.backgroundColor = '#e9ecef';
+        alert.style.display = 'none';
     }
 })
 
