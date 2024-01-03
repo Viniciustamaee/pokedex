@@ -19,13 +19,15 @@ body {
     flex-direction: column;
     background-color: #e9ecef;
     width: 400px;
+    height: 700px;
+
     border-radius: 10px;
     border: 10px solid #03071e;
 }
 
 #backCard {
     background-color: #9d0208;
-    padding: 22px 15px 22px 15px;
+    padding: 22px 15px 20px 15px;
     border-radius: 30px;
 }
 
@@ -110,6 +112,18 @@ input[type="range"] {
 
 }
 
+#send {
+    height: 0px;
+    width: 0px;
+}
+
+form button {
+    position: relative;
+    background: none;
+    left: 240px;
+    bottom: 50px;
+}
+
 #HP,
 #attack,
 #defense,
@@ -192,17 +206,4 @@ footer button {
     left: 150px;
     width: 100px;
     cursor: pointer;
-}
-
-
-form button {
-    position: relative;
-    background: none;
-    left: 240px;
-    bottom: 50px;
-}
-
-#send {
-    height: 0px;
-    width: 0px;
 }
