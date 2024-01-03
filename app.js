@@ -20,6 +20,7 @@ const barHP = document.querySelector('#HP')
 const shinyIcon = document.querySelector('#shiny')
 const body = document.querySelector('body')
 const pokebola = document.querySelector('#pokebola')
+const boxPokemon = document.querySelector("#boxPokemon")
 
 let alert = document.createElement('h2');
 let countShiny = true;
@@ -58,9 +59,10 @@ const infoPokmeon = async (pokemon) => {
     const data = await searchPokemon(pokemon);
 
     if (input.value > 649) {
-        alert.innerText = 'The limit is 649';
-        alert.style.display = ''
-        input.parentNode.appendChild(alert)
+        alert.style.color = 'red'
+        alert.innerText = 'THE LIMIT IS 649';
+        namePokemon.innerText = alert.innerText
+        IdPokemon.innerHTML = ''
         input.value = '';
         return;
     }
@@ -147,6 +149,8 @@ form.addEventListener('submit', (event) => {
     numberPokemon = parseInt(input.value, 10);
     secondType.innerHTML = ''
     firstType.innerHTML = ''
+    shiny.style.backgroundColor = '#e9ecef';
+
     alert.style.display = 'none';
     if (input.value > 649) {
         prev.disabled = true

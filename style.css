@@ -8,8 +8,7 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     display: flex;
     justify-content: center;
-    margin-top: 5px;
-
+    font-size: 90%;
 }
 
 #card {
@@ -18,16 +17,17 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: #e9ecef;
-    width: 400px;
-    height: 86%;
+    width: 130%;
+    height: 90%;
     border-radius: 10px;
     border: 10px solid #03071e;
 }
 
 #backCard {
     background-color: #9d0208;
-    padding: 22px 15px 20px 15px;
+    padding: 10px 100px 50px 10px;
     border-radius: 30px;
+
 }
 
 #nameAndId {
@@ -40,6 +40,7 @@ body {
 
 #couple {
     display: flex;
+    font-size: 25px;
 }
 
 #couple h3 {
@@ -70,8 +71,8 @@ body {
 }
 
 #imgPokemon {
-    height: 200px;
-    width: 200px;
+    height: 120px;
+    width: 120 px;
 }
 
 
@@ -87,8 +88,8 @@ header #secondType {
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    width: 100px;
-    height: 30px;
+    width: 78px;
+    height: 25px;
 }
 
 header #secondType {
@@ -106,11 +107,6 @@ section {
     margin-bottom: 12px;
 }
 
-input[type="range"] {
-    width: 250px;
-
-}
-
 #send {
     height: 0px;
     width: 0px;
@@ -120,7 +116,7 @@ form button {
     position: relative;
     background: none;
     left: 240px;
-    bottom: 50px;
+    bottom: 44px;
 }
 
 #HP,
@@ -168,7 +164,7 @@ footer hr {
 footer input {
     margin-top: 10px;
     width: 280px;
-    height: 50px;
+    height: 40px;
     font-size: 16px;
     border-radius: 10px;
 }
@@ -201,7 +197,8 @@ footer button {
 
 #pokebola {
     position: relative;
-    top: 20px;
+    top: 10px;
+
     left: 150px;
     width: 100px;
     cursor: pointer;
