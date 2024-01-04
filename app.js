@@ -58,14 +58,26 @@ const searchPokemon = async (pokemon) => {
 const infoPokmeon = async (pokemon) => {
     const data = await searchPokemon(pokemon);
     if (input.value > 649) {
-        alert.style.color = 'red'
         alert.innerText = 'THE LIMIT IS 649';
         namePokemon.innerText = alert.innerText
         IdPokemon.innerHTML = ''
+        imgPokemon.src = 'https://4.bp.blogspot.com/-iGaMK0eMGOI/UyNFq5nT5LI/AAAAAAAABKQ/w9xYCLHDgoM/s1600/12.png'
         input.value = '';
+        firstType.style.backgroundColor = '#e9ecef';
+        secondType.style.backgroundColor = '#e9ecef';
+        firstType.style.color = '#e9ecef';
+        secondType.style.color = '#e9ecef';
+        HPnumber.innerHTML = '0';
+        attackNumber.innerHTML = '0';
+        defenseNumber.innerHTML = '0';
+        speedNumber.innerHTML = '0';
+        barAttack.style.width = '0px';
+        barDefense.style.width = '0px';
+        barHP.style.width = '0px';
+        barSpeed.style.width = '0px';
+        shiny.style.display = 'none';
         return;
     }
-
     if (data) {
         namePokemon.innerHTML = data.name;
         IdPokemon.innerHTML = data.id;
