@@ -57,7 +57,6 @@ const searchPokemon = async (pokemon) => {
 
 const infoPokmeon = async (pokemon) => {
     const data = await searchPokemon(pokemon);
-
     if (input.value > 649) {
         alert.style.color = 'red'
         alert.innerText = 'THE LIMIT IS 649';
