@@ -8,6 +8,8 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
     font-size: 90%;
 }
 
@@ -25,10 +27,10 @@ body {
 
 #backCard {
     background-color: #9d0208;
-    align-self: flex-start;
     padding: 10px 15px 0px;
     border-radius: 30px;
     height: 90vh;
+
 }
 
 #nameAndId {
