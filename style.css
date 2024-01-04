@@ -207,7 +207,7 @@ footer button {
 #pokebola {
     position: relative;
     top: 7px;
-    left: 128px;
+    left: 132px;
     width: 50px;
     cursor: pointer;
     user-select: none;
@@ -216,7 +216,7 @@ footer button {
 
 #pokebola:hover {
     top: 0;
-    left: 125px;
+    left: 129px;
     width: 60px;
 
 }
